@@ -5,9 +5,22 @@
 A simple methodology to deploy single page apps in Laravel using the [lightning deploy strategy.](http://ember-cli-deploy.com/docs/v0.6.x/the-lightning-strategy/)  
 
 
-# Installation
-- composer require curiousminds/lightning-deploy
-- php artisan vendor:publish
+## Installation
+Installation is pretty simple. Just run the following command:
 
-# Usage
-This package provides a configurable route that will pull page content from a Redis store. Running the vendor:publish command will create a lightning.php file in the config directory. There are two options which may be set: `lightning_deploy_key`, and the `deploy_url`. The deploy key is the Redis key which contains the desired version of the app. The `deploy_url` option tells the app what path you would like the single page app to appear on. 
+```
+composer require curiousminds/lightning-deploy
+php artisan vendor:publish
+```
+
+After that, simply add your configuration, and you are all set. 
+
+## What does it do?
+This package provides a configurable route that will pull statically generated page content from your Redis store. It will add the appropriate headers so that client-side content is not cached. (This will be configurable in future versions of the package).  
+
+## Configuration
+There are two options which may be set: `lightning_deploy_key`, and the `lightning_deploy_url`.
+
+- `lightning_deploy_key` is the Redis key which contains the desired version of the app. This is typically set when you build your single page application. 
+ 
+-  The `deploy_url` option tells the laravel app what path you would like the single page app to appear on. `/` is set by default. (placing the application on the root url.)
