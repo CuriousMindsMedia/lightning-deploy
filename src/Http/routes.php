@@ -1,4 +1,4 @@
 <?php
 $deploypath = config('lightning.deploy_url', '/');
 
-Route::GET('/', 'Curiousminds\LightningDeploy\Http\LightningDeployController@deploy');
+Route::GET($deploypath, 'CuriousMinds\LightningDeploy\Http\LDController@deploy')->middleware('web');
