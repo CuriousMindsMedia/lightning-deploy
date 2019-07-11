@@ -10,7 +10,7 @@ Installation is pretty simple. Just run the following command:
 
 ```
 composer require curiousminds/lightning-deploy
-php artisan vendor:publish
+php artisan vendor:publish --provider=curiousminds/lightning-deploy
 ```
 
 After that, simply add your configuration, and you are all set. 
@@ -23,4 +23,4 @@ There are two options which may be set: `lightning_deploy_key`, and the `lightni
 
 - `lightning_deploy_key` is the Redis key which contains the desired version of the app. This is typically set when you build your single page application. 
  
--  The `deploy_url` option tells the laravel app what path you would like the single page app to appear on. `/` is set by default. (placing the application on the root url.)
+-  The `lightning_deploy_url` option tells the laravel app what path you would like the single page app to appear on. `/` is set by default. (placing the application on the root url.)
